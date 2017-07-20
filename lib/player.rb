@@ -7,12 +7,7 @@ DEFAULT_POINTS = 60
       @points = points
   end
 
-  def attack(player)
-    player.reduce_points
-  end
-
   def reduce_points
     @points -= 10
   end
-
 end

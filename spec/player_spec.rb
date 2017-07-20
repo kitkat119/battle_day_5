@@ -14,15 +14,7 @@ describe Player do
     expect(player_one.points).to eq Player::DEFAULT_POINTS
   end
 
-  context "attack" do
-    it "damages the player" do
-      expect(player_two).to receive(:reduce_points)
-      player_one.attack(player_two)
-    end
-
-    it 'reduces the player hit points' do
-      expect { player_one.reduce_points }.to change { player_one.points }.by(-10)
-    end
+  it 'reduces the player hit points' do
+    expect { player_two.reduce_points }.to change { player_two.points }.by(-10)
   end
-
 end
