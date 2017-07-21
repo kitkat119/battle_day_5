@@ -1,9 +1,17 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new}
+  subject(:game) {described_class.new(player_1, player_2)}
   let(:player_1) { double :player }
   let(:player_2) { double :player }
+
+it 'has a first player' do
+  expect(game.player_1).to eq player_1
+end
+
+it 'has a second player' do
+  expect(game.player_2).to eq player_2
+end
 
   context "attack" do
     it "damages the player" do
