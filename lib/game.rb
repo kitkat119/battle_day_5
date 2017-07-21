@@ -25,9 +25,23 @@ class Game
     @current_turn = opponent_of(current_turn)
   end
 
-  private
-
   def opponent_of(player)
-    @players.select { |person| person != player }.first
+    player == player_1 ? player_2 : player_1
   end
+
+  def game_over?
+    player_1.points == 0 || player_2.points == 0
+  end
+
+  def losing_player
+    if player_1.points == 0
+      player_1.name
+    elsif player_2.points == 0
+      player_2.name
+    end
+  end
+
+  private
+  attr_reader :players
+
 end

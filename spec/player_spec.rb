@@ -10,7 +10,7 @@ describe Player do
     expect(player_one.name).to eq name
   end
 
-  it "should return DEFAULT_POINTS" do
+  it "should return player 1's points" do
     expect(player_one.points).to eq Player::DEFAULT_POINTS
   end
 
